@@ -3,6 +3,17 @@
   "version": "0.0.1",
   "description": "My first library with some useful Angular components",
   "keywords": ["Angular", "Typescript", "Components"],
+  "homepage": "https://github.com/jmartinez3421/j-components#readme",
+  "bugs": {
+    "url": "https://github.com/jmartinez3421/j-components/issues",
+    "email": "jmartinezg.fp@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jordi Martínez Grau",
+    "email": "jmartinezg.fp@gmail.com",
+    "url": "https://github.com/jmartinez3421"
+  },
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0"
