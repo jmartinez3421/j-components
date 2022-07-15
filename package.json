@@ -1,0 +1,13 @@
+{
+  "name": "j-components",
+  "version": "0.0.1",
+  "description": "My first library with some useful Angular components",
+  "keywords": ["Angular", "Typescript", "Components"],
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
