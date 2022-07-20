@@ -1,0 +1,16 @@
+<ul [ngClass]="{'menu': !isChild}">
+  <li *ngFor="let route of routes">
+    <ng-container *ngIf="!route.subRoutes; else elseTemplate">
+      <button class="menu__button" [routerLink]="route.path"><i [class]="route.icon" *ngIf="route.icon"></i> {{route.title}}
+      </button>
+    </ng-container>
+
+    <ng-template #elseTemplate>
+      <button class="menu__button"><i [class]="route.icon" *ngIf="route.icon"></i> {{route.title}} &nbsp;&nbsp; <i class="fa-solid" [ngClass]="{'fa-caret-down': !isChild, 'fa-caret-right': isChild}"></i></button>
+      <jc-menu-link [routes]="route.subRoutes!" [isChild]="true"></jc-menu-link>
+    </ng-template>
+  </li>
+</ul>
+
+
+

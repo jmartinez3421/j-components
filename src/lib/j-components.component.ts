@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
       j-components works!
     </p>
   `,
-  styles: [
-  ]
+  styles: []
 })
 export class JComponentsComponent implements OnInit {
 

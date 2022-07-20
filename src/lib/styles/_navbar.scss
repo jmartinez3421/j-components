@@ -1,0 +1,106 @@
+@import "base";
+
+.nav {
+  display: grid;
+  height: 7rem;
+  width: 100%;
+  background-color: darkslategrey;
+  grid-column-gap: 2rem;
+  align-content: center;
+  box-shadow: 0 2px 6px 1px rgba(0,0,0,0.39);
+
+  &--left {
+    grid-template-columns: 20rem 1fr;
+  }
+
+  &--right {
+    grid-template-columns: 1fr 20rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    padding: 2rem;
+
+    &--right {
+      order: 1;
+    }
+  }
+
+  &__routes {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: inherit;
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05) translateY(-3px);
+    }
+  }
+}
+
+ul{
+  list-style: none;
+}
+
+.menu{
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    float: left;
+    position: relative;
+    background-color: darkslategrey;
+  }
+}
+
+.menu li ul{
+  display: none;
+  position: absolute;
+  width: 140px;
+  left: 0;
+}
+
+.menu li:hover > jc-menu-link > ul, .menu li > button:focus ~ jc-menu-link > ul{
+  display: block;
+}
+
+.menu li ul li {
+  position:relative;
+
+  .menu__button{
+    box-shadow: 0 7px 9px 1px rgba(0,0,0,0.39);
+  }
+}
+
+.menu li ul li ul {
+  left: auto;
+  right: -140px;
+  top:0;
+}
+
+.menu__button{
+  padding: 1.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all .2s;
+  animation: fade-in .2s ease-in;
+
+  &:hover{
+    background-color: rgba(0, 0, 0, 30%);
+  }
+}
