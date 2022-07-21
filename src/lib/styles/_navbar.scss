@@ -7,7 +7,7 @@
   background-color: darkslategrey;
   grid-column-gap: 2rem;
   align-content: center;
-  box-shadow: 0 2px 6px 1px rgba(0,0,0,0.39);
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.39);
 
   &--left {
     grid-template-columns: 20rem 1fr;
@@ -20,6 +20,8 @@
   &__title {
     font-size: 2rem;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
 
     &--right {
       order: 1;
@@ -30,6 +32,18 @@
     font-size: 1.5rem;
     display: flex;
     align-items: center;
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+
+    &--center {
+      justify-content: center;
+    }
   }
 
   &__link {
@@ -47,50 +61,65 @@
   }
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-.menu{
+.menu {
   list-style: none;
   text-decoration: none;
   margin: 0;
   padding: 0;
 
-  li{
+  li {
     float: left;
     position: relative;
     background-color: darkslategrey;
   }
 }
 
-.menu li ul{
+.menu li ul {
   display: none;
   position: absolute;
   width: 140px;
+
+  &.left{
   left: 0;
+  }
+
+  &.right{
+    right: 0px;
+  }
 }
 
-.menu li:hover > jc-menu-link > ul, .menu li > button:focus ~ jc-menu-link > ul{
+.menu li:hover > jc-menu-link > ul, .menu li > button:focus ~ jc-menu-link > ul {
   display: block;
 }
 
 .menu li ul li {
-  position:relative;
+  position: relative;
   width: 100%;
 
-  .menu__button{
-    box-shadow: 0 7px 9px 1px rgba(0,0,0,0.39);
+  .menu__button {
+    box-shadow: 0 7px 9px 1px rgba(0, 0, 0, 0.39);
   }
 }
 
 .menu li ul li ul {
-  left: auto;
-  right: -140px;
-  top:0;
+  top: 0;
+
+  &.right {
+    left: -140px;
+    right: auto;
+  }
+
+  &.left, &.center {
+    left: auto;
+    right: -140px;
+  }
 }
 
-.menu__button{
+.menu__button {
   padding: 1.5rem;
   outline: none;
   border: none;
@@ -102,7 +131,7 @@ ul{
   animation: fade-in .2s ease-in;
   width: 100%;
 
-  &:hover{
+  &:hover {
     background-color: rgba(0, 0, 0, 30%);
   }
 }

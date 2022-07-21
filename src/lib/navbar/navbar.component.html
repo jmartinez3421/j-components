@@ -3,7 +3,7 @@
     <button class="nav__link"><i [class]="homeIcon" *ngIf="homeIcon"></i> {{title}}</button>
   </div>
 
-  <div class="nav__routes">
-    <jc-menu-link [routes]="menuRoutes"></jc-menu-link>
+  <div class="nav__routes nav__routes--{{routesPosition}}">
+    <jc-menu-link [routes]="menuRoutes" [routePosition]="routesPosition"></jc-menu-link>
   </div>
 </nav>

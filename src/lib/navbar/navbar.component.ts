@@ -18,8 +18,6 @@ export class NavbarComponent implements OnInit {
 
   // @Input() search: boolean = true;
 
-  collapsed: boolean = true;
-
   constructor() { }
 
   ngOnInit(): void {

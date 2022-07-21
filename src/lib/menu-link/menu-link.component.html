@@ -1,4 +1,4 @@
-<ul [ngClass]="{'menu': !isChild}">
+<ul [ngClass]="{'menu': !isChild}" class="{{routePosition}}">
   <li *ngFor="let route of routes">
     <ng-container *ngIf="!route.subRoutes; else elseTemplate">
       <button class="menu__button" [routerLink]="route.path"><i [class]="route.icon" *ngIf="route.icon"></i> {{route.title}}
@@ -6,8 +6,8 @@
     </ng-container>
 
     <ng-template #elseTemplate>
-      <button class="menu__button"><i [class]="route.icon" *ngIf="route.icon"></i> {{route.title}} &nbsp;&nbsp; <i class="fa-solid" [ngClass]="{'fa-caret-down': !isChild, 'fa-caret-right': isChild}"></i></button>
-      <jc-menu-link [routes]="route.subRoutes!" [isChild]="true"></jc-menu-link>
+      <button class="menu__button"><span *ngIf="showDropdown('left')"><i class="fa-solid fa-caret-left"></i> &nbsp;&nbsp;</span> <i [class]="route.icon" *ngIf="route.icon"></i> {{route.title}} <span *ngIf="showDropdown('right')">&nbsp;&nbsp; <i class="fa-solid" [ngClass]="{'fa-caret-down': !isChild, 'fa-caret-right': isChild}"></i></span> </button>
+      <jc-menu-link [routes]="route.subRoutes!" [isChild]="true" [routePosition]="routePosition"></jc-menu-link>
     </ng-template>
   </li>
 </ul>
