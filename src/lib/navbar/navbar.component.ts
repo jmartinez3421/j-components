@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MenuRoute, RoutesPosition, TitlePosition} from "../models/MenuRoute";
+import {MenuRoute, NavColors, RoutesPosition, TitlePosition} from "../models/MenuRoute";
 
 @Component({
   selector: 'jc-navbar',
@@ -16,11 +16,15 @@ export class NavbarComponent implements OnInit {
   @Input() menuRoutes: MenuRoute[] = [];
   @Input() routesPosition: RoutesPosition = 'right';
 
+  @Input() navColor: NavColors = 'dark';
+
   // @Input() search: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  //TODO: make the navbar Responsive. Collapsed with a toggle button
 
 }

@@ -4,10 +4,61 @@
   display: grid;
   height: 7rem;
   width: 100%;
-  background-color: darkslategrey;
   grid-column-gap: 2rem;
   align-content: center;
   box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.39);
+
+  background-color: var(--bgColor);
+  color: var(--color);
+
+  &--blue {
+    --bgColor: #2F3C7E;
+    --color: #fff;
+  }
+
+  &--red {
+    --bgColor: #fd424a;
+    --color: #fff;
+  }
+
+  &--lime {
+    background-color: #CCF381;
+  }
+
+  &--dark {
+    --bgColor: #0b1117;
+    --color: #CCCCCC;
+  }
+
+  &--light {
+    --bgColor: #ECE9E6;
+    --color: #474747;
+  }
+
+  &--lavender {
+    --bgColor: #E2D1F9;
+    --color: #474747;
+  }
+
+  &--skyblue {
+    --bgColor: #89ABE3FF;
+    --color: #3a3a3a;
+  }
+
+  &--lightpurple {
+    --bgColor: #AA96DA;
+    --color: #1e1e1e;
+  }
+
+  &--darkgreen {
+    --bgColor: #2C5F2D;
+    --color: #CCCCCC;
+  }
+
+  &--lightgreen {
+    --bgColor: #2BAE66FF;
+    --color: #fff;
+  }
 
   &--left {
     grid-template-columns: 20rem 1fr;
@@ -47,13 +98,7 @@
   }
 
   &__link {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: inherit;
     transition: all .2s;
-    cursor: pointer;
 
     &:hover {
       transform: scale(1.05) translateY(-3px);
@@ -74,7 +119,6 @@ ul {
   li {
     float: left;
     position: relative;
-    background-color: darkslategrey;
   }
 }
 
@@ -83,12 +127,12 @@ ul {
   position: absolute;
   width: 140px;
 
-  &.left{
-  left: 0;
+  &.left {
+    left: 0;
   }
 
-  &.right{
-    right: 0px;
+  &.right {
+    right: 0;
   }
 }
 
@@ -121,17 +165,22 @@ ul {
 
 .menu__button {
   padding: 1.5rem;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-size: inherit;
-  cursor: pointer;
+  background-color: var(--bgColor) !important;
+  color: var(--color) !important;
   transition: all .2s;
   animation: fade-in .2s ease-in;
-  width: 100%;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 30%);
+    filter: brightness(80%);
   }
+}
+
+.btn{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
 }

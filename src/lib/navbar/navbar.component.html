@@ -1,6 +1,6 @@
-<nav class="nav nav--{{titlePosition}}">
+<nav class="nav nav--{{titlePosition}} nav--{{navColor}}">
   <div class="nav__title nav__title--{{titlePosition}}">
-    <button class="nav__link"><i [class]="homeIcon" *ngIf="homeIcon"></i> {{title}}</button>
+    <button class="btn nav__link" [routerLink]="homeRoute"><i [class]="homeIcon" *ngIf="homeIcon"></i> {{title}}</button>
   </div>
 
   <div class="nav__routes nav__routes--{{routesPosition}}">
