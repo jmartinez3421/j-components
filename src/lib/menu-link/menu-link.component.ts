@@ -14,6 +14,10 @@ export class MenuLinkComponent{
 
   constructor() { }
 
+  showCaret(){
+  //  TODO: if the screen is small show the caret-right
+  }
+
   showDropdown(pos: 'left' | 'right'){
     if(pos === 'left'){
       return this.isChild && this.routePosition === 'right';

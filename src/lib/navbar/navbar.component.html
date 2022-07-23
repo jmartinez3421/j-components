@@ -1,9 +1,11 @@
-<nav class="nav nav--{{titlePosition}} nav--{{navColor}}">
+<nav class="nav nav--{{titlePosition}} nav--{{navColor}}" (resize)="showRoutes()">
   <div class="nav__title nav__title--{{titlePosition}}">
     <button class="btn nav__link" [routerLink]="homeRoute"><i [class]="homeIcon" *ngIf="homeIcon"></i> {{title}}</button>
   </div>
 
-  <div class="nav__routes nav__routes--{{routesPosition}}">
+  <div class="nav__routes nav__routes--{{routesPosition}}" id="routes">
     <jc-menu-link [routes]="menuRoutes" [routePosition]="routesPosition"></jc-menu-link>
   </div>
+
+  <button class="btn nav__link nav__toggler" (click)="toggle()"><i class="fa-solid" [ngClass]="{'fa-bars': collapsed, 'fa-xmark': !collapsed}"></i></button>
 </nav>

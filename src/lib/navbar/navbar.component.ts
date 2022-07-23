@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input} from '@angular/core';
 import {MenuRoute, NavColors, RoutesPosition, TitlePosition} from "../models/MenuRoute";
 
 @Component({
@@ -6,7 +6,7 @@ import {MenuRoute, NavColors, RoutesPosition, TitlePosition} from "../models/Men
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements AfterViewInit {
 
   @Input() homeIcon: string = 'fa-solid fa-igloo';
   @Input() title: string = 'JNavBar';
@@ -18,13 +18,40 @@ export class NavbarComponent implements OnInit {
 
   @Input() navColor: NavColors = 'dark';
 
-  // @Input() search: boolean = true;
+  routes: any;
 
-  constructor() { }
+  _collapsed: boolean = true;
 
-  ngOnInit(): void {
+  get collapsed(): boolean {
+    return this._collapsed;
   }
 
-  //TODO: make the navbar Responsive. Collapsed with a toggle button
+  constructor() {
+  }
 
+  ngAfterViewInit(): void {
+    this.routes = document.getElementById('routes');
+    window.addEventListener('resize', this.showRoutes);
+    // this.showRoutes();
+  }
+
+  toggle() {
+    this._collapsed = !this._collapsed;
+    this.showRoutes();
+  }
+
+  showRoutes() {
+    if (window.screen.availWidth < 500) {
+      if (this.collapsed !== undefined) {
+        if (!this._collapsed) {
+          this.routes.style.display = 'block';
+        } else {
+          this.routes.style.display = 'none';
+        }
+      }
+    } else {
+      this._collapsed = true;
+      this.routes.style.display = '';
+    }
+  }
 }
